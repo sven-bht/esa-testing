@@ -1,0 +1,187 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > LinkedList</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">Aufgabe1_2</a>
+</div>
+
+<h1>Coverage Summary for Class: LinkedList (Aufgabe1_2)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LinkedList</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95,8%
+  </span>
+  <span class="absValue">
+    (23/24)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    97,4%
+  </span>
+  <span class="absValue">
+    (37/38)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package Aufgabe1_2;
+&nbsp;
+&nbsp;public class LinkedList {
+&nbsp;    Node head;
+&nbsp;    int length;
+&nbsp;
+<b class="fc">&nbsp;    LinkedList() {</b>
+<b class="fc">&nbsp;        head = null;</b>
+<b class="fc">&nbsp;        length = 0;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void addBack(int data) {
+<b class="fc">&nbsp;        Node newNode = new Node(data);</b>
+<b class="fc">&nbsp;        if (head == null) {</b>
+<b class="fc">&nbsp;            head = newNode;</b>
+&nbsp;        } else {
+<b class="fc">&nbsp;            Node current = head;</b>
+<b class="fc">&nbsp;            for (int i = 0; i &lt; length; i++) {</b>
+<b class="fc">&nbsp;                if (i == length - 1) {</b>
+<b class="fc">&nbsp;                    current.next = newNode;</b>
+&nbsp;                }
+<b class="fc">&nbsp;                current = current.next;</b>
+&nbsp;            }
+&nbsp;        }
+<b class="fc">&nbsp;        length++;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getElement(int index) throws ElementNotPresentException {
+<b class="fc">&nbsp;        if (index &lt; 0 || index &gt;= length) {</b>
+<b class="fc">&nbsp;            throw new ElementNotPresentException();</b>
+&nbsp;        }
+<b class="fc">&nbsp;        Node current = head;</b>
+<b class="pc">&nbsp;        for (int i = 0; i &lt; length; i++) {</b>
+<b class="fc">&nbsp;            if (i == index) {</b>
+<b class="fc">&nbsp;                return current.data;</b>
+&nbsp;            }
+<b class="fc">&nbsp;            current = current.next;</b>
+&nbsp;        }
+<b class="nc">&nbsp;        return 0;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void removeFirst(int data) {
+<b class="fc">&nbsp;        Node current = head;</b>
+<b class="fc">&nbsp;        Node previous = null;</b>
+<b class="fc">&nbsp;        for (int i = 0; i &lt; length; i++) {</b>
+<b class="fc">&nbsp;            if (current.data == data) {</b>
+<b class="fc">&nbsp;                length--;</b>
+<b class="fc">&nbsp;                if (length == 0) {</b>
+<b class="fc">&nbsp;                    head = null;</b>
+<b class="fc">&nbsp;                } else if (previous == null) {</b>
+<b class="fc">&nbsp;                    head = current.next;</b>
+&nbsp;                } else {
+<b class="fc">&nbsp;                    previous.next = current.next;</b>
+&nbsp;                }
+&nbsp;                return;
+&nbsp;            }
+<b class="fc">&nbsp;        previous = current;</b>
+<b class="fc">&nbsp;        current = current.next;</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    public String toString() {
+<b class="fc">&nbsp;        Node current = head;</b>
+<b class="fc">&nbsp;        StringBuilder listString = new StringBuilder();</b>
+<b class="fc">&nbsp;        for (int i = 0; i &lt; length; i++) {</b>
+<b class="fc">&nbsp;            listString.append(current.data).append(&quot; &quot;);</b>
+<b class="fc">&nbsp;            current = current.next;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return listString.toString();</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-06-02 19:46</div>
+</div>
+</body>
+</html>

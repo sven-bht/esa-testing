@@ -78,11 +78,29 @@ public class VerlagTest {
     }
 
     /*
-     * Spezielle Zeichen müssen auchg erkannt werden
+     * Spezielle Zeichen müssen auch erkannt werden
      * */
     @Test
     void specialChars() {
-        int money = Verlag.berechne("!!!!!!!!!!@@@@@@@@@@##########$$$$$$$$$$%%%%%%%%%%^^^^^^^^^^&&&&&&&&&&**********(((((((((()))))))))))ääääääääääööööööööööüüüüüüüüüü");
-        assertEquals(money, 13);
+        int money = Verlag.berechne("!!!!!!!!!!");
+        assertEquals(money, 1);
+        money = Verlag.berechne("@@@@@@@@@@");
+        assertEquals(money, 1);
+        money = Verlag.berechne("##########");
+        assertEquals(money, 1);
+        money = Verlag.berechne("$$$$$$$$$$");
+        assertEquals(money, 1);
+        money = Verlag.berechne("%%%%%%%%%%");
+        assertEquals(money, 1);
+        money = Verlag.berechne("^^^^^^^^^^");
+        assertEquals(money, 1);
+        money = Verlag.berechne("&&&&&&&&&&");
+        assertEquals(money, 1);
+        money = Verlag.berechne("**********");
+        assertEquals(money, 1);
+        money = Verlag.berechne("((((((((((");
+        assertEquals(money, 1);
+        money = Verlag.berechne("))))))))))");
+        assertEquals(money, 1);
     }
 }
