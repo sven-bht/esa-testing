@@ -1,5 +1,5 @@
 # ESA Testing
-## Aufgabe 1 + 2
+### Aufgabe 1 + 2
 Code: [Aufgabe1_2](./src/main/java/Aufgabe1_2)
 
 Tests: [Aufgabe1_2](./src/test/java/Aufgabe1_2/LinkedListTest.java)
@@ -56,3 +56,19 @@ simpel zu nutzen sind, verlief es mit assertThrows() doch ein wenig holpriger. M
 Dokumentation unklar, wann die zu testende Methode aufgerufen werden soll und wie die genaue Exception angegeben werden
 soll. Mit einem Beipsiel wurde aber schnell klar, dass die Exception natürlich mit dem .class Attribut angegeben werden
 kann und man die zu testende Methode logischerweise als Lamda Ausdruck übergeben kann.
+
+### Aufgabe 3
+Beim Test-Driven-Development viel zu starten, da es ja eine etwas andere Herangehensweise an Probleme erfordert.
+Mir wurde dann aber relativ schnell klar, dass man hierbei nicht wie man es gewöhnt ist Lösungsdenkend, sondern eher
+Problemdenkend arbeiten muss. Das heißt man überlegt sich erst, was alles schief gehen könnte und überlegt sich
+anschließend erst wie man das Ganze implementieren konnte.
+Nachdem ich die Idee verstanden hatte, ging waren die Tests eigentlich sehr schnell implementiert. Auch die LLMs kann
+können einem hier sehr gute Inspiration bringen. Allerdings würde ich besonders bei komplexeren Problemen diese auch
+nicht für mehr verwenden, da es sehr schwer ist ohne eine tatsächliche Implementierung zu erklären, was der zu Testende
+Teil machen soll (die menschliche Sprache ist sehr ungenau verlgichen zu Programmiersprachen).
+Nachdem die Tests geschrieben waren, war die Methode auch sehr schnell implementiert.
+Im Großen und Ganzen finde ich diesen Ansatz sehr interessant und werde sicherlich versuchen ihn in Zukunft auch in der
+Praxis zu verwenden (vielleicht aber eher bei etwas komplexeren Methoden). Die Probleme, die ich sehe, sind, dass
+auch Tests falsch Implementiert sein können, was unter Umständen auch nicht sofort bemerkt wird und dadurch auch Zeit
+einiges an Zeit kosten könnte und dass sich die Anforderungen an die Methoden während der Entwicklung auch verändern 
+können und dadurch viele der Tests neu geschrieben werden müssen.
